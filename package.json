@@ -1,0 +1,32 @@
+{
+  "name": "nBlog",
+  "version": "0.0.1",
+  "description": "Static Markdown blog for Node.js",
+  "keywords": [
+    "Blog",
+    "Markdown",
+    "Node.js"
+  ],
+  "homepage": "http://github.com/aweijnitz/nBlog",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aweijnitz/nBlog"
+  },
+  "author": {
+    "name": "Anders Weijnitz",
+    "email": "anders.weijnitz@gmail.com"
+  },
+  "main": "./blog_server.js",
+  "engines": {
+    "node": ">= v0.8"
+  },
+  "dependencies": {
+    "marked": "0.2.8",
+    "async": "*",
+    "colors": "*",
+    "mime": "*",
+    "mkdirp": "*",
+    "datetime": "*"
+  },
+  "readmeFilename": "README.md"
+}
