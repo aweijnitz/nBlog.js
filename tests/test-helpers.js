@@ -52,11 +52,10 @@ suite('helpers.getDateAndTitle', function() {
 
     test('Check handling empty file, date', function() {
       var date = new Date();
-      var dateStr = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
       var result = 
         helpers.getDateAndTitle(new Buffer("", 'utf8'), 
                                 ENCODING).date;
-      dateStr.should.equal(result);
+      date.getDate().should.equal(new Date(result).getDate());
     });
     test('Check date is testdate "2013-04-23"', function() {
       var result = helpers.getDateAndTitle(markdown, ENCODING).date;

@@ -27,8 +27,7 @@
     "mustache": "*",
     "mkdirp": "*",
     "mocha": "1.8.2",
-    "should": "1.2.2",
-    "datetime": "*"
+    "should": "1.2.2"
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec --ui tdd ./tests"

@@ -33,7 +33,19 @@
        <a class="brand" href="../">Anders' blog</a>
        <div class="nav-collapse collapse" id="main-menu">
         <ul class="nav" id="main-menu-left">
-          <li><a href="archive.html">Archive</a></li>
+
+          <li class="dropdown" id="archive-menu">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Archive <b class="caret"></b></a>
+            <ul class="dropdown-menu" id="archive-links">
+              <!-- Pull in archive here (AJAX) -->
+              <li><a target="_blank" href="bootstrap.min.css">bootstrap.min.css</a></li>
+              <li><a target="_blank" href="bootstrap.css">bootstrap.css</a></li>
+              <li class="divider"></li>
+              <li><a target="_blank" href="variables.less">variables.less</a></li>
+              <li><a target="_blank" href="bootswatch.less">bootswatch.less</a></li>
+            </ul>
+          </li>
+
           <li><a href="about.html">About</a></li>
         </ul>
         <ul class="nav pull-right" id="main-menu-right">
