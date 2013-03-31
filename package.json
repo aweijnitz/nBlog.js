@@ -16,17 +16,22 @@
     "name": "Anders Weijnitz",
     "email": "anders.weijnitz@gmail.com"
   },
-  "main": "./blog_server.js",
+  "main": "./nBlog.js",
   "engines": {
     "node": ">= v0.8"
   },
   "dependencies": {
     "marked": "0.2.8",
-    "async": "*",
-    "colors": "*",
-    "mime": "*",
+    "async": "0.2.6",
+    "promised-io": "0.3.3",
+    "mustache": "*",
     "mkdirp": "*",
+    "mocha": "1.8.2",
+    "should": "1.2.2",
     "datetime": "*"
   },
-  "readmeFilename": "README.md"
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec --ui tdd ./tests"
+  },
+  "readmeFilename": "./README.md"
 }
