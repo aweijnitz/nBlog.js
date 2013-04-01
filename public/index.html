@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Socket Rocket</title>
-    <!-- Original Bootswatch: Simplex -->
+    <!-- Original Theme Bootswatch: Simplex -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mini and minimalist.">
     <meta name="author" content="Thomas Park">
@@ -16,6 +16,7 @@
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootswatch.css" rel="stylesheet">
+    <link href="css/nblog-extra.css" rel="stylesheet">
   </head>
 
   <body class="preview" id="top" data-spy="scroll" data-target=".subnav" data-offset="80">
@@ -31,7 +32,7 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </a>
-       <a class="brand" href="#">Anders&#39;s blog</a>
+       <a class="brand" href="#">Anders&#39; blog</a>
        <div class="nav-collapse collapse" id="main-menu">
         <ul class="nav" id="main-menu-left">
 
@@ -39,18 +40,13 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Archive <b class="caret"></b></a>
             <ul class="dropdown-menu" id="archive-links">
               <!-- Pull in archive here (AJAX) -->
-              <li><a target="_blank" href="bootstrap.min.css">bootstrap.min.css</a></li>
-              <li><a target="_blank" href="bootstrap.css">bootstrap.css</a></li>
-              <li class="divider"></li>
-              <li><a target="_blank" href="variables.less">variables.less</a></li>
-              <li><a target="_blank" href="bootswatch.less">bootswatch.less</a></li>
             </ul>
           </li>
 
-          <li><a href="http:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;andersweijnitz">About</a></li>
+          <li><a href="http://www.linkedin.com/in/andersweijnitz">About</a></li>
         </ul>
         <ul class="nav pull-right" id="main-menu-right">
-          <li><a rel="tooltip" target="_blank" href="https:&#x2F;&#x2F;twitter.com&#x2F;aweijnitz" title="Me on Twitter">On Twitter</a></li>
+          <li><a rel="tooltip" target="_blank" href="https://twitter.com/aweijnitz" title="Me on Twitter">On Twitter</a></li>
         </ul>
        </div>
      </div>
@@ -75,55 +71,26 @@
 ================================================== -->
 <section id="latest_post">
   <div class="row">
-    <div class="span8 well">
-      <h2>Blog post title</h2>
-      <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
-      <blockquote class="pull-right">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-      </blockquote>
+    <div id="latest_content" class="span8 well">
+      <!-- LATEST BLOG POST HERE -->
     </div>
   </div>  
-</section>
+</section><hr>
 <section id="posts">
-  <div class="row">
-    <div class="span8">
-      <h2>Blog post title older</h2>
-      <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span8">
-      <h2>Blog post title oldest</h2>
-      <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
-      <blockquote class="pull-right">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-      </blockquote>
-      </div>
-  </div>
+  <div id="next_post"></div> <!-- INSERT NEW POSTS HERE -->
+
+
+<!-- Pager
+================================================== -->
   <div class="row">
     <div class="span8">
       <ul class="pager">
-        <li class="previous"><a href="#">&larr; Older</a></li>
-        <li class="next disabled"><a href="#">Newer &rarr;</a></li>
+        <li><a id="next-post" class="btn btn-inverse btn-large" href="#">More posts</a></li>
       </ul>
     </div>
   </div>
 
 </section>
-
-<!-- Footer
-================================================== -->
-<hr>
-<footer id="footer">
-  <div class="span8">
-    <p class="pull-right"><a href="#top">Back to top</a></p>
-  </div>
-</footer>
 
 </div><!-- /container -->
 
@@ -135,6 +102,10 @@
 <script src="js/jquery.smooth-scroll.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootswatch.js"></script>
+<script src="js/main-ui.js"></script>
+<script type="text/javascript">
+  $(document).ready(UI);
+</script>
 
 
 </body>

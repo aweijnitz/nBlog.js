@@ -14,7 +14,7 @@ var BLOG_INDEX = './public/index.html';
 var blogSettings = {
   blogName: "Socket Rocket",
   author: "Anders Weijnitz",
-  topRight: "Anders's blog",
+  topRight: "Anders' blog",
   aboutURL: "http://www.linkedin.com/in/andersweijnitz",
   twitterURL: "https://twitter.com/aweijnitz"
 };
