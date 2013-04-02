@@ -39,12 +39,14 @@ The basic flow of execution is quite straight forward. nBlog.js can be invoked e
 ### Modifying the blog templates
 Assuming you are familiar with twitter boostrap, modifying the blog template (*./lib/templates/index.mustache*) should be straight forward. If you you are not familiar with Twitter Bootstrap, well, you will probably have to start here [Bootstrap](http://twitter.github.com/bootstrap/). Additinally, you will want to peek inside the file *./public/js/main-ui.js*.
 
+
+![Screenshot](http://i.imgur.com/XpKqRRP.png)
+
+
 ### Running the tests
 Testing is done using [Mocha](http://visionmedia.github.com/mocha/) and [Should](https://github.com/visionmedia/should.js). Tests are stored in the folder `./tests` in the root project folder.
 
 * Running the tests: `npm test`
-
-![Screenshot](http://i.imgur.com/XpKqRRP.png)
 
 ## Known issues
 - There seem to be an issue with using Node v0.8.x. The code was developed uisng Node v0.10.2 and last time I installed a node version manager (n), it wrecked havoc. Not keen on trying again.
