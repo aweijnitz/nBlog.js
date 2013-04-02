@@ -44,6 +44,8 @@ Testing is done using [Mocha](http://visionmedia.github.com/mocha/) and [Should]
 
 * Running the tests: `npm test`
 
+![Screenshot](http://i.imgur.com/XpKqRRP.png)
+
 ## Known issues
 - There seem to be an issue with using Node v0.8.x. The code was developed uisng Node v0.10.2 and last time I installed a node version manager (n), it wrecked havoc. Not keen on trying again.
 - The first time you view a single post, the "Next post" is enabled, but doesn't do anything. Should either load the next post or not be there. 
