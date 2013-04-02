@@ -4,8 +4,6 @@
 
 Build status: [![Build Status](https://travis-ci.org/aweijnitz/nBlog.js.png)](https://travis-ci.org/aweijnitz/nBlog.js)
 
-## Overview
-
 ## Installation
 The only way to install is currently by cloning or downloading from this repository on Github. Do the following:
 
