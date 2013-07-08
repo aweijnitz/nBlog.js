@@ -51,10 +51,34 @@ Testing is done using [Mocha](http://visionmedia.github.com/mocha/) and [Should]
 - The first time you view a single post, the "Next post" is enabled, but doesn't do anything. Should either load the next post or not be there. 
 
 
-## Next steps
-- Introduce proper configuration management (at least a settings file).
-- Refactor the storage manager (datasources.js) and introduce Git support to be able to read blog posts directly from a git repository.
-- Finish the test data generator (postgenerator.js) and use in the test suite.
-- General cleaning. Most of it was written within a 72h timespan and could use a second look.
-- Add browser testing using phantom.js
+## Next steps/roadmap
+- Introduce proper __configuration management__ (at least a settings file).
+
+
+
+- Add support for __tagging__ posts with keywords. *Idea:* The last lines of the post could optionally contain a comma-separated list of keywords, maybe preceeded by a start token "Keywords:" by iteslf on a separate line.
+
+
+
+- Add support for __automatic tagging__ using [Open Calais](http://www.opencalais.com/documentation/calais-web-service-api)  
+
+
+
+- __Refactor__ the storage manager (datasources.js)
+-  Introduce __Git support__ to be able to read blog posts directly from a git repository.
+
+
+- Finish the __test data generator__ (postgenerator.js) and use in the test suite.
+
+
+
+- General __cleaning__. Most of it was written within a 72h timespan and could use a second look.
+
+
+
+- Change the example output template to a __mobile-friendly Single Page App__. *Idea:* Generate posts as JSON objects instead of HTML. The "app" then downloads the ten most recent posts and stores in browser. Everything renders using browser-side templates and routing. Need to haev another look at [PouchDB](http://pouchdb.com/) and possibilities using the manifest file.
+
+
+
+- Add __browser testing__ using phantom.js
 
