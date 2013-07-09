@@ -1,3 +1,5 @@
+var config = require('../config/config.json');
+
 var 
   fs = require("promised-io/fs");
   compiler = require('../lib/compile.js'),

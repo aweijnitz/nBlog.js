@@ -1,23 +1,41 @@
-var Mustache = require('mustache');
-var fs = require("promised-io/fs");
+var config = require('./config/config.json');
+var blogSettings = require('./config/blogSettings.json');
+
+var Mustache = require('mustache');           // Template engine 
+var bunyan =require('bunyan');                // Logging service
+var fs = require("promised-io/fs");           
 var promise = require("promised-io/promise");
-var logger = require('./lib/logger.js');
+
 var compiler = require('./lib/compile.js');
 
-// MOVE TO CONFIG (and cmd line args)
-var ENCODING = 'utf-8';
-var SOURCE_PATH = null;
-var DESTINATION_PATH = null;
+if(!config) {
+    console.error('Could not find ./config/config.json. Make sure it is in the config folder (relative to nBlog.js).');
+    process.exit(1);
+}
 
-var BLOG_TEMPLATE = './lib/templates/index.mustache';
-var BLOG_INDEX = './public/index.html';
-var blogSettings = {
-  blogName: "Socket Rocket",
-  author: "Anders Weijnitz",
-  topRight: "Anders' blog",
-  aboutURL: "http://www.linkedin.com/in/andersweijnitz",
-  twitterURL: "https://twitter.com/aweijnitz"
-};
+if(!blogSettings) {
+    console.error('Could not find blogSettings.json. Make sure it is in the config folder (relative to nBlog.js).');
+    process.exit(1);
+}
+
+
+var logger = bunyan.createLogger({
+    name: 'nBlog',
+    streams: [{
+        type: 'rotating-file',
+        path: config.logFile.name || "./logs/nBlog.log",
+        period: config.logFile.logRotationPeriod || "1m",
+        count: 12
+    }]
+});
+
+
+var ENCODING = config.encoding || 'utf-8';
+var SOURCE_PATH = config.inputDir;
+var DESTINATION_PATH = config.outputDir;
+
+var BLOG_TEMPLATE = config.blogTemplatesDir || './lib/templates/index.mustache';
+var BLOG_INDEX = config.blogIndexFile || './public/index.html';
 
 var runningAsScript = require.main === module;
 
@@ -31,14 +49,14 @@ var buildBlog = function(sourceDir, destDir, postsOnly) {
         fs.writeFile(BLOG_INDEX, blogIndex, ENCODING).then(function(result) {
           indexBuilt.resolve(true);
       }, function(err) {
-        // logger.error("COULD NOT WRITE BLOG INDEX " + BLOG_INDEX  + "Cause: " + err);
+        logger.fatal({"error": err}, "COULD NOT WRITE BLOG INDEX " + BLOG_INDEX  + "Cause: " + err);
         indexBuilt.reject(err);
         if(runningAsScript)
           process.exit(1);
       })
     },
     function(err) {
-      // logger.error("COULD NOT READ BLOG TEMPLATE " + BLOG_TEMPLATE + "Cause: " + err);
+      logger.fatal({"error": err}, "COULD NOT READ BLOG TEMPLATE " + BLOG_TEMPLATE + "Cause: " + err);
       indexBuilt.reject(err);
       if(runningAsScript)
         process.exit(1);
@@ -52,7 +70,7 @@ var buildBlog = function(sourceDir, destDir, postsOnly) {
 
 
 if(runningAsScript) {
-  // logger.info("RUNNING AS SCRIPT");
+  logger.info("RUNNING AS SCRIPT");
   var argv = require('optimist');
   argv.options('v', {
     alias : 'verbose',

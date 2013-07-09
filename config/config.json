@@ -1,0 +1,10 @@
+{
+  "port": "8080",
+  "outputDir": "./public",
+  "inputDir": "test-data",
+  "generator": "html",
+  "blogTemplatesDir": "./lib/templates/index.mustache",
+  "blogIndexFile": "./public/index.html",
+  "encoding": "utf-8",
+  "logFile": { "name": "./logs/nblog.log", "logRotationPeriod": "3m"}
+}

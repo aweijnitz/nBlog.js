@@ -1,3 +1,6 @@
+var config = require('../config/config.json');
+var blogSettings = require('../config/blogSettings.json');
+
 var 
   compiler = require('../lib/compile.js'),
   H = require('../lib/helpers.js'),
@@ -7,13 +10,17 @@ var
   should = require('should');
 
 // defaults (read from config later)
-var ENCODING = 'utf-8';
-var SOURCE_PATH = './test-data';
-var DESTINATION_PATH = './public';
-var INDEX_FILE = './public/index.html';
+var ENCODING = config.encoding || 'utf-8';
+var SOURCE_PATH = config.inputDir;
+var DESTINATION_PATH = config.outputDir;
+
+var BLOG_TEMPLATE = config.blogTemplatesDir || './lib/templates/index.mustache';
+var BLOG_INDEX = config.blogIndexFile || './public/index.html';
+
+var INDEX_FILE = config.outputDir + '/index.html';
 
 var generateTestPosts = function(dir) {
-  // TODO: Use geenrator.generate, but need to switch to promised based model
+  // TODO: Use generator.generate, but need to switch to promised based model
 }
 
 var removeTestPosts = function(dir) {
